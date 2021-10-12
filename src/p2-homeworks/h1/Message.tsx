@@ -13,7 +13,7 @@ function Message(props: MessagePropsType) {
         <div className={s.main}>
             <div className={s.avatarContainer}>
                 <div className={s.avatar}>
-                    <img src={props.avatar}/>
+                    <img src={props.avatar} alt={'anime'}/>
                 </div>
             </div>
             <div className={s.message}>

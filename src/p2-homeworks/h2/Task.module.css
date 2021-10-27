@@ -20,11 +20,12 @@
     margin: 5px 5px 5px 30px;
 }
 
-.priority {
-    align-self: flex-end;
+.taskName {
+    width: 140px;
+    word-wrap: break-word;
 }
 
-.taskContainer button {
+.priority {
     align-self: flex-end;
 }
 

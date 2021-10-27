@@ -15,7 +15,7 @@ function Task(props: TaskPropsType) {
 
     return (
         <div className={s.taskContainer}>
-            <span>{props.task.name} </span>
+            <span className={s.taskName}>{props.task.name} </span>
             <span className={s.priority}>{props.task.priority} </span>
             <button onClick={deleteCallback}>X</button>
         </div>

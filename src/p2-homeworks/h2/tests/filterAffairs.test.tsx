@@ -1,7 +1,7 @@
 import React from 'react'
-import {AffairType, filterAffairs} from '../HW2'
+import {TaskType, filterTasks} from '../HW2'
 
-let initialState: AffairType[]
+let initialState: TaskType[]
 
 beforeEach(() => {
     initialState = [
@@ -15,18 +15,18 @@ beforeEach(() => {
 })
 
 test('filter by all', () => {
-    const newState = filterAffairs(initialState, 'all')
+    const newState = filterTasks(initialState, 'all')
     expect(newState.length).toBe(6)
 })
 test('filter by high', () => {
-    const newState = filterAffairs(initialState, 'high')
+    const newState = filterTasks(initialState, 'high')
     expect(newState.length).toBe(2)
 })
 test('filter by middle', () => {
-    const newState = filterAffairs(initialState, 'middle')
+    const newState = filterTasks(initialState, 'middle')
     expect(newState.length).toBe(1)
 })
 test('filter by low', () => {
-    const newState = filterAffairs(initialState, 'low')
+    const newState = filterTasks(initialState, 'low')
     expect(newState.length).toBe(3)
 })

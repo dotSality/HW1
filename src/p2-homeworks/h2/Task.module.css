@@ -1,0 +1,42 @@
+.mainContainer {
+    display: flex;
+    width: 300px;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.mainContainer button {
+    height: 23px;
+    width: 40px;
+    background-color: #dfe1ff;
+    border: 1px solid black;
+    color: black;
+}
+
+.taskContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px 5px 5px 30px;
+}
+
+.priority {
+    align-self: flex-end;
+}
+
+.taskContainer button {
+    align-self: flex-end;
+}
+
+.buttonContainer {
+    margin-top: 10px;
+}
+
+.buttonContainer button {
+    height: auto;
+    width: auto;
+    margin-left: 10px;
+    background-color: #dfe1ff;
+    border: 1px solid black;
+    color: black;
+}

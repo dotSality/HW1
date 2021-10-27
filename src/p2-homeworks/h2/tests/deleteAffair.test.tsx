@@ -1,7 +1,7 @@
 import React from 'react'
-import {AffairType, deleteAffair} from '../HW2'
+import {TaskType, deleteTask} from '../HW2'
 
-let initialState: AffairType[]
+let initialState: TaskType[]
 
 beforeEach(() => {
     initialState = [
@@ -15,22 +15,22 @@ beforeEach(() => {
 })
 
 test('delete 0', () => {
-    const newState = deleteAffair(initialState, 0)
+    const newState = deleteTask(initialState, 0)
     expect(newState.length).toBe(6)
 })
 test('delete 1', () => {
-    const newState = deleteAffair(initialState, 1)
+    const newState = deleteTask(initialState, 1)
     expect(newState.length).toBe(5)
 })
 test('delete 3', () => {
-    const newState = deleteAffair(initialState, 3)
+    const newState = deleteTask(initialState, 3)
     expect(newState.length).toBe(5)
 })
 test('delete 6', () => {
-    const newState = deleteAffair(initialState, 6)
+    const newState = deleteTask(initialState, 6)
     expect(newState.length).toBe(5)
 })
 test('delete 7', () => {
-    const newState = deleteAffair(initialState, 7)
+    const newState = deleteTask(initialState, 7)
     expect(newState.length).toBe(6)
 })

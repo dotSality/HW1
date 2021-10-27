@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AlternativeAffairs() {
+function AlternativeTask() {
     return (
         <div>
 
@@ -8,4 +8,4 @@ function AlternativeAffairs() {
     )
 }
 
-export default AlternativeAffairs
+export default AlternativeTask

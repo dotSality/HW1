@@ -5,7 +5,7 @@
     flex-direction: column;
 }
 
-.mainContainer button {
+.mainContainer .button {
     height: 23px;
     width: 40px;
     background-color: #dfe1ff;
@@ -33,7 +33,7 @@
     margin-top: 10px;
 }
 
-.buttonContainer button {
+.buttonContainer .button {
     height: auto;
     width: auto;
     margin-left: 10px;
@@ -41,4 +41,26 @@
     border: 1px solid black;
     color: black;
     font-size: 100%;
+}
+
+.buttonActive {
+    height: auto;
+    width: auto;
+    margin-left: 10px;
+    background-color: #6e708a;
+    border: 1px solid black;
+    color: white;
+    font-size: 100%;
+}
+
+.high {
+    color: #d54542
+}
+
+.middle {
+    color: #fff83c
+}
+
+.low {
+    color: #67ff73
 }

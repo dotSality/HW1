@@ -7,6 +7,7 @@ type TasksPropsType = { // need to fix any
     data: Array<TaskType>
     setFilter: (filter: FilterType) => void
     deleteTaskCallback: (_id: number) => void
+    filter: FilterType
 }
 
 function Tasks(props: TasksPropsType) {
@@ -18,20 +19,23 @@ function Tasks(props: TasksPropsType) {
         />
     ))
 
-    const setAll = () => { props.setFilter('all') } // need to fix
-    const setHigh = () => { props.setFilter('high') }
-    const setMiddle = () => { props.setFilter('middle') }
-    const setLow = () => { props.setFilter('low') }
+    const checkFilter = (e: React.MouseEvent<HTMLButtonElement>) => {
+        props.setFilter(e.currentTarget.value as FilterType );
+    }
+
+    const setClassActive = (filter: FilterType) => {
+        return (props.filter === filter ? s.buttonActive : s.button)
+    }
 
     return (
         <div className={s.mainContainer}>
 
             {mappedTasks}
             <div className={s.buttonContainer}>
-                <button onClick={setAll}>All</button>
-                <button onClick={setHigh}>High</button>
-                <button onClick={setMiddle}>Middle</button>
-                <button onClick={setLow}>Low</button>
+                <button onClick={checkFilter} className={setClassActive('all')} value={'all'}>All</button>
+                <button onClick={checkFilter} className={setClassActive('high')} value={'high'}>High</button>
+                <button onClick={checkFilter} className={setClassActive('middle')} value={'middle'}>Middle</button>
+                <button onClick={checkFilter} className={setClassActive('low')} value={'low'}>Low</button>
             </div>
         </div>
     )

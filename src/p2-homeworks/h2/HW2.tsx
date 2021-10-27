@@ -40,6 +40,7 @@ function HW2() {
                 data={filteredTasks}
                 setFilter={setFilter}
                 deleteTaskCallback={deleteTaskCallback}
+                filter={filter}
             />
 
             <hr/>

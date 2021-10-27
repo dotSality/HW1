@@ -24,7 +24,7 @@ function Tasks(props: TasksPropsType) {
     }
 
     const setClassActive = (filter: FilterType) => {
-        return (props.filter === filter ? s.buttonActive : s.button)
+        return props.filter === filter ? s.buttonActive : s.button;
     }
 
     return (

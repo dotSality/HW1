@@ -18,7 +18,7 @@
     height: 50px;
     width: 50px;
     align-self: flex-end;
-    margin: 0px 15px 0px 5px;
+    margin: 0 15px 0 5px;
 }
 
 .avatar img {
@@ -31,14 +31,14 @@
     align-self: flex-start;
     max-width: 400px;
     background-color: #1f2d3f;
-    border-radius: 5px 5px 5px 0px;
+    border-radius: 5px 5px 5px 0;
     position: relative;
 }
 
 .message::before {
     content: '';
     position: absolute;
-    left: -20px; bottom: 0px;
+    left: -20px; bottom: 0;
     border: 10px solid transparent;
     border-right: 10px solid #1f2d3f;
     border-bottom: 10px solid #1f2d3f;

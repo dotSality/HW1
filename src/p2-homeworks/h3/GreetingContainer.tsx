@@ -1,31 +1,49 @@
-import React, {useState} from 'react'
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react'
 import Greeting from './Greeting'
+import {UserType} from './HW3';
+
 
 type GreetingContainerPropsType = {
-    users: any // need to fix any
-    addUserCallback: any // need to fix any
+    users: UserType[]
+    addUserCallback: (name: string) => void
 }
 
-// более простой и понятный для новичков
-// function GreetingContainer(props: GreetingPropsType) {
-
-// более современный и удобный для про :)
 // уровень локальной логики
 const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUserCallback}) => { // деструктуризация пропсов
-    const [name, setName] = useState<any>('') // need to fix any
-    const [error, setError] = useState<any>('') // need to fix any
+    const [name, setName] = useState<string>('')
+    const [error, setError] = useState<string>('')
 
-    const setNameCallback = (e: any) => { // need to fix any
-        setName('') // need to fix
+    const setErrorMessage = (message: string) => setError(message)
+
+    const VALIDATION_EXPRESSION =/[\!\@\#\$\%\^\&\*\(\)\_\-\+\=\\\|\/\,\<\.\>\s\`\~\'\"\;\:\?0-9А-Яа-я]/gmi
+
+    const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
+        if (e.currentTarget.value === ' ') {
+            setErrorMessage('Does your name start with a space?')
+        } else {
+            setName(e.currentTarget.value)
+            setError('')
+        }
     }
+
+
     const addUser = () => {
-        alert(`Hello  !`) // need to fix
+        if (name.match(VALIDATION_EXPRESSION)) {
+            setErrorMessage('Invalid name format. Please, enter correct name')
+        } else {
+            alert(`Hello ${name} !`)
+            setName('')
+            addUserCallback(name)
+        }
     }
 
-    const totalUsers = 0 // need to fix
+    const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) =>  (e.key === 'Enter') ? addUser() : null
+
+    const totalUsers = `Total users: ${users.length}` // need to fix
 
     return (
         <Greeting
+            onKeyPress={onKeyPressCallback}
             name={name}
             setNameCallback={setNameCallback}
             addUser={addUser}

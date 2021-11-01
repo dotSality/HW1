@@ -15,20 +15,15 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
 
     const setErrorMessage = (message: string) => setError(message)
 
-    const VALIDATION_EXPRESSION =/[\!\@\#\$\%\^\&\*\(\)\_\-\+\=\\\|\/\,\<\.\>\s\`\~\'\"\;\:\?0-9А-Яа-я]/gmi
+    const VALIDATION_EXPRESSION =/[\!\@\#\$\%\^\&\*\(\)\_\-\+\=\\\|\/\,\<\.\>\`\~\'\"\;\:\?\s0-9А-Яа-я]/gm
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        if (e.currentTarget.value === ' ') {
-            setErrorMessage('Does your name start with a space?')
-        } else {
             setName(e.currentTarget.value)
             setError('')
-        }
     }
 
-
     const addUser = () => {
-        if (name.match(VALIDATION_EXPRESSION)) {
+        if (name.match(VALIDATION_EXPRESSION) || !name) {
             setErrorMessage('Invalid name format. Please, enter correct name')
         } else {
             alert(`Hello ${name} !`)
@@ -39,7 +34,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
 
     const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) =>  (e.key === 'Enter') ? addUser() : null
 
-    const totalUsers = `Total users: ${users.length}` // need to fix
+    const totalUsers = `Total users: ${users.length}`
 
     return (
         <Greeting

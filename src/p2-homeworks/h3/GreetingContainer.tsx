@@ -15,11 +15,11 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
 
     const setErrorMessage = (message: string) => setError(message)
 
-    const VALIDATION_EXPRESSION =/[\!\@\#\$\%\^\&\*\(\)\_\-\+\=\\\|\/\,\<\.\>\`\~\'\"\;\:\?\s0-9А-Яа-я]/gm
+    const VALIDATION_EXPRESSION = /[\!\@\#\$\%\^\&\*\(\)\_\-\+\=\\\|\/\,\<\.\>\`\~\'\"\;\:\?\s0-9А-Яа-я]/gm
 
     const setNameCallback = (e: ChangeEvent<HTMLInputElement>) => {
-            setName(e.currentTarget.value)
-            setError('')
+        setError('')
+        setName(e.currentTarget.value)
     }
 
     const addUser = () => {
@@ -27,12 +27,12 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
             setErrorMessage('Invalid name format. Please, enter correct name')
         } else {
             alert(`Hello ${name} !`)
-            setName('')
             addUserCallback(name)
         }
+        setName('')
     }
 
-    const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) =>  (e.key === 'Enter') ? addUser() : null
+    const onKeyPressCallback = (e: KeyboardEvent<HTMLInputElement>) => (e.key === 'Enter') ? addUser() : null
 
     const totalUsers = `Total users: ${users.length}`
 

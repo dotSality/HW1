@@ -6,7 +6,9 @@ import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 
 function HW4() {
     const [text, setText] = useState<string>('')
-    const error = text ? '' : 'error'
+    const error = text ? '' : 'Invalid text format'
+
+    const placeholderText = 'Your placeholder...'
 
     const showAlert = () => {
         if (error) {
@@ -30,7 +32,8 @@ function HW4() {
                     onChangeText={setText}
                     onEnter={showAlert}
                     error={error}
-                    // spanClassName={s.testSpanError}
+                    placeholder={placeholderText}
+                    spanClassName={s.testSpanError}
                 />
 
                 <SuperInputText
@@ -62,6 +65,14 @@ function HW4() {
                 >
                     some text {/*// этот текст попадёт в children*/}
                 </SuperCheckbox>
+                <SuperCheckbox
+                    checked={checked}
+                    onChangeChecked={setChecked}
+                    disabled
+                >
+                    disabled {/*// этот текст попадёт в children*/}
+                </SuperCheckbox>
+
 
                 {/*// onChange тоже должен работать*/}
                 <SuperCheckbox checked={checked} onChange={testOnChange}/>

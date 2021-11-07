@@ -1,6 +1,7 @@
 import React from 'react'
 import {TaskType} from './HW2';
 import s from './Task.module.css';
+import SuperButton from '../h4/common/c2-SuperButton/SuperButton';
 
 type TaskPropsType = {
     // key не нужно типизировать
@@ -19,7 +20,7 @@ function Task(props: TaskPropsType) {
         <div className={s.taskContainer}>
             <span className={s.taskName}>{props.task.name} </span>
             <span className={priorityClass}>{props.task.priority} </span>
-            <button className={s.button} onClick={deleteCallback}>X</button>
+            <SuperButton red onClick={deleteCallback}>x</SuperButton>
         </div>
     )
 }

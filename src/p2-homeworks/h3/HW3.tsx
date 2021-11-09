@@ -11,12 +11,10 @@ export type UserType = {
 const HW3 = () => {
     const [users, setUsers] = useState<UserType[]>( [])
     const addUserCallback = (name: string) => setUsers([...users, {_id: v1(), name: name}])
-    console.log(users)
     return (
         <div>
             <hr/>
             homeworks 3
-            <br/>
             <br/>
 
             <GreetingContainer users={users} addUserCallback={addUserCallback}/>

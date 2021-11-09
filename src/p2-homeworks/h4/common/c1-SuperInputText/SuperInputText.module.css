@@ -1,11 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+
 .superInput {
     border-radius: 5px;
     outline: 3px double #a48bd9;
-    height: 20px;
+    height: 30px;
     width: 180px;
     overflow: hidden;
     border: none;
-    margin: 10px 0;
+    margin: 5px 0;
+    padding: 2px;
 }
 
 .errorInput {

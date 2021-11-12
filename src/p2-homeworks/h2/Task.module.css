@@ -44,7 +44,7 @@
     font-size: 100%;
 }
 
-.buttonActive {
+.buttonContainer .buttonActive {
     background-color: #6e708a;
     border: 2px solid white;
     color: white;

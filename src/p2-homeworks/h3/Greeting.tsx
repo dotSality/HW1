@@ -19,20 +19,22 @@ const Greeting: React.FC<GreetingPropsType> = (
     let inputClass = error ? s.error + ' ' + s.input : s.input
 
     return (
-        <div className={s.cont}>
-            <div>
-                <SuperInputText
-                    placeholder={'Enter your name...'}
-                    value={name}
-                    onKeyPress={onKeyPress}
-                    onChange={setNameCallback}
-                    error={error}
-                    className={inputClass}
-                    spanClassName={s.errorBlock}
-                />
+        <div className={s.mainCont}>
+            <div className={s.cont}>
+                <div>
+                    <SuperInputText
+                        placeholder={'Enter your name...'}
+                        value={name}
+                        onKeyPress={onKeyPress}
+                        onChange={setNameCallback}
+                        error={error}
+                        className={inputClass}
+                        spanClassName={s.errorBlock}
+                    />
+                </div>
+                <SuperButton className={s.addButton} onClick={addUser}>add</SuperButton>
+                <span className={s.totalUsers}>{totalUsers}</span>
             </div>
-            <SuperButton className={s.addButton} onClick={addUser}>add</SuperButton>
-            <span className={s.totalUsers}>{totalUsers}</span>
         </div>
     )
 }

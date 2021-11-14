@@ -1,18 +1,21 @@
 import React from 'react'
 import Header from './Header'
-import Routes from './Routes'
+import {AllRoutes} from './Routes'
+import {HashRouter} from 'react-router-dom';
 
 function HW5() {
     return (
         <div>
-            {/*в gh-pages лучше работает HashRouter*/}
-            {/*<HashRouter>*/}
+            {/*цвета еще буду изменять и размер кнопок, т.к. эти уже не нравятся:))*/}
+            {/*плюс не делал 404, просто сделал больше размер, каюсь*/}
+            <HashRouter>
 
-            <Header/>
+                <Header/>
 
-            <Routes/>
+                <AllRoutes/>
 
-            {/*</HashRouter>*/}
+
+            </HashRouter>
         </div>
     )
 }

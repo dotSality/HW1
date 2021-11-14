@@ -1,5 +1,6 @@
 import React from 'react';
 import Message from './Message';
+import s from './Message.module.css'
 
 const messageData = {
     avatar: 'https://i.ibb.co/9gPNL7J/avatar.png',
@@ -20,7 +21,7 @@ const messageData = {
 function HW1() {
     return (
         <div>
-            <hr/>
+
             homeworks 1
 
             <Message

@@ -1,6 +1,5 @@
 import React, {ChangeEvent, KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
-import {UserType} from './HW3';
 import SuperInputText from '../h4/common/c1-SuperInputText/SuperInputText';
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton';
 

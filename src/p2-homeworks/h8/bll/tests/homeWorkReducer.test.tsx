@@ -1,7 +1,7 @@
 import React from 'react'
 import {ageSortAC, homeWorkReducer, sortAC} from '../homeWorkReducer'
 
-let initialState: any[] // need to fix any
+let initialState: any[]
 
 beforeEach(() => {
     initialState = [

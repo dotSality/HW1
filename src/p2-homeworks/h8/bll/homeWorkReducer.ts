@@ -4,7 +4,7 @@ const CHECK = 'CHECK';
 const SORT = 'SORT';
 
 export const ageSortAC = (age: number) => ({type: CHECK, age} as const);
-export const sortAC = (payload: string) => ({type: SORT, payload} as const)
+export const sortAC = (direction: string) => ({type: SORT, payload: direction} as const)
 type SortActionType = ReturnType<typeof sortAC>
 type AgeSortActionType = ReturnType<typeof ageSortAC>;
 type HWReducerActionType = AgeSortActionType | SortActionType

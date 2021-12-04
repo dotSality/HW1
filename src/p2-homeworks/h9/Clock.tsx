@@ -43,7 +43,7 @@ function Clock() {
             >
                 {timerId !== 0 ? stringTime : ''}
             </span>
-            {/*я сделал исчезающие часики при отключении таймера*/}
+            {/*реализовано исчезновение часов при отключении таймера и, соответственно, даты*/}
             {show && timerId !== 0 ? (<div className={s.div}>{stringDate}</div>) : (<div className={s.div}></div>)}
 
             <SuperButton onClick={start}>start</SuperButton>

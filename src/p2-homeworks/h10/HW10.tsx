@@ -3,6 +3,7 @@ import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 import {useDispatch, useSelector} from 'react-redux';
 import store, {AppStoreType} from './bll/store';
 import {loadingAC} from './bll/loadingReducer';
+import loader from './img/32x32.gif'
 
 function HW10() {
     // useSelector, useDispatch
@@ -28,7 +29,7 @@ function HW10() {
             {/*should work (должно работать)*/}
             {loading
                 ? (
-                    <div style={{height: '25px'}}>крутилка...</div>
+                    <div style={{height: '25px', marginLeft: '25px'}}><img src={loader} alt="loader"/></div>
                 ) : (
                     <div style={{height: '25px'}}>
                         <SuperButton onClick={setLoading}>set loading...</SuperButton>

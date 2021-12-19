@@ -1,23 +1,31 @@
-import React from 'react'
+import { Slider } from '@mui/material'
+import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, useState } from 'react'
+import s from './SuperDoubleRange.module.css'
 
 type SuperDoubleRangePropsType = {
-    onChangeRange?: (value: [number, number]) => void
-    value?: [number, number]
-    // min, max, step, disable, ...
+
 }
 
-const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
-    {
-        onChangeRange, value,
-        // min, max, step, disable, ...
+const SuperDoubleRange = () => {
+    const [value, setValue] = useState<number[]>([20, 37]);
+    const onChangeCallback = (e: Event, newValue: number | number[]) => {
+
+        setValue(newValue as number[]);
     }
-) => {
-    // сделать самому, можно подключать библиотеки
+
+    // const finalRangeClassName = `${s.range} ${className ? className : ''}`
+
 
     return (
-        <>
-            DoubleRange
-        </>
+        <div className={s.container}>
+            <Slider
+                getAriaLabel={() => 'Value range'}
+                value={value}
+                onChange={onChangeCallback}
+                valueLabelDisplay="auto"
+                getAriaValueText={() => '20'}
+            />
+        </div>
     )
 }
 

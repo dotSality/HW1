@@ -1,11 +1,12 @@
 import React from 'react';
 import s from '../Navigation.module.css';
+import HW11 from '../../h11/HW11';
 
 export function JuniorPlus() {
     return (
         <div>
             <div className={s.empty}></div>
-            JUNIOR PLUS PAGE
+            <HW11/>
 
         </div>
     )

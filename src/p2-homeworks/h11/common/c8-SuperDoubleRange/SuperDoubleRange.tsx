@@ -1,32 +1,63 @@
-import { Slider } from '@mui/material'
-import React, {ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, useState } from 'react'
-import s from './SuperDoubleRange.module.css'
+import React from 'react'
+import {Box, Slider} from "@mui/material";
+
 
 type SuperDoubleRangePropsType = {
-
+    setValue1: (value1:number) =>void
+    setValue2: (value2:number) =>void
+    setValue3: (value3:number[])=> void
+    value1:number
+    value2:number
+    value3:number[]
 }
 
-const SuperDoubleRange = () => {
-    const [value, setValue] = useState<number[]>([20, 37]);
-    const onChangeCallback = (e: Event, newValue: number | number[]) => {
+const minDistance = 15;
 
-        setValue(newValue as number[]);
+const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
+    {
+        setValue1,
+        setValue2,
+        setValue3,
+        value1,
+        value2,
+        value3,
     }
+) => {
 
-    // const finalRangeClassName = `${s.range} ${className ? className : ''}`
+
+    const handleChange1 = (
+        event: Event,
+        newValue: number | number[],
+        activeThumb: number,
+    ) => {
+        if (!Array.isArray(newValue)) {
+            return;
+        }
+
+        if (activeThumb === 0) {
+            setValue3([Math.min(newValue[0], value2 - minDistance), value2]);
+            setValue1(Math.min(newValue[0], value2 - minDistance))
+        } else {
+            setValue3([value3[0], Math.max(newValue[1], value1 + minDistance)]);
+            setValue2(value3[1])
+        }
+    };
 
 
     return (
-        <div className={s.container}>
-            <Slider
-                getAriaLabel={() => 'Value range'}
-                value={value}
-                onChange={onChangeCallback}
-                valueLabelDisplay="auto"
-                getAriaValueText={() => '20'}
-            />
-        </div>
+        <>
+            <Box sx={{ width: 300, marginRight: "25px" }}>
+                <Slider
+                    size={'medium'}
+                    value={value3}
+                    onChange={handleChange1}
+                    style={{color:"teal"}}
+                />
+            </Box>
+
+        </>
     )
 }
 
 export default SuperDoubleRange
+

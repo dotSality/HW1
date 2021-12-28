@@ -6,7 +6,7 @@ import {AppStoreType} from '../h10/bll/store';
 import {changeTheme, ThemeStateType} from './bll/themeReducer';
 import SuperRadio from '../h7/common/c6-SuperRadio/SuperRadio';
 
-const themes = ['dark', 'red', 'some', 'gay'];
+const themes = ['dark', 'red', 'some', 'gradient'];
 
 function HW12() {
     const theme = useSelector<AppStoreType, ThemeStateType>(state => state.theme)

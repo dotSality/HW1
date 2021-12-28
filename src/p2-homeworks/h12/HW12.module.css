@@ -22,7 +22,7 @@
     color: darkslateblue;
 }
 
-.gay {
+.gradient {
     background: rgb(185, 0, 0);
     background: linear-gradient(140deg, rgba(185, 0, 0, 1) 0%,
                 rgba(134, 123, 0, 1) 8%, rgba(167, 176, 56, 1) 19%,

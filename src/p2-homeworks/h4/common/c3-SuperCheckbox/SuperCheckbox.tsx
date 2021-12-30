@@ -27,7 +27,7 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
     const finalInputClassName = `${s.checkbox} ${className ? className : ''}`
     spanClassName = `${s.spanClassName} ${restProps.disabled ? s.spanDisabled : ''}`
     return (
-        <label>
+        <label style={{marginLeft: '20px'}}>
             <input
                 type={'checkbox'}
                 onChange={onChangeCallback}
